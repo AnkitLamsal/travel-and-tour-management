@@ -1,0 +1,3 @@
+From booking_detail_.html
+<!-- <p><a href="{% url 'travelapp:booking_update' pk=booking_detail.pk%}">Update </a></p>
+    <p><a href="{% url 'travelapp:booking_delete' pk=booking_detail.pk%}">Delete</a></p> -->

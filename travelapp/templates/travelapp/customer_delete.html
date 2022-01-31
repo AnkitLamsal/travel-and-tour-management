@@ -1,0 +1,10 @@
+{% extends "travelapp/base_customer_payment.html"%}
+{% block body_block %}
+<div class="listView">
+<h2>Are you sure you want to delete your Profile ?</h2>
+<form method="post" action="{% url 'travelapp:user_delete'%}">  
+    {% csrf_token %}  
+     <input type="submit" value="Delete Profile!" class="btn btn-primary">  
+ </form>
+</div>
+{% endblock %}  

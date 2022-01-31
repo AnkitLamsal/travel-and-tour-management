@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static%}
+    <head>
+        <title>Travel Websites</title>
+        <link rel="stylesheet" href="{% static 'css/home.css'%}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <section class="header">
+            <div class="container">
+                
+                {% if user.is_authenticated and user.is_superuser %}
+                
+                <button type="button" class="login-btn"><a href="{% url 'travelapp:list-user'%}">Users Email List</a></button>    
+                <button type="button" class="login-btn"><a href="http://127.0.0.1:8000/admin/travelapp/package/">Manage Package</a></button> 
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:user_logout'%}">Logout Admin</a></button> 
+                    {% elif user.is_authenticated%}
+                    
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:user_detail' %}">Details</a></button>
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:package_list'%}">Packages</a></button>
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:booking_list'%}">Booking</a></button>
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:user_logout'%}">Logout</a></button>
+                {% else %}
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:user_login'%}">Login</a></button> 
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:user_create'%}"> Sign up</a></button>
+                    <button type="button" class="login-btn"><a href="{% url 'travelapp:package_list'%}">Packages</a></button>
+                {% endif%} 
+            </div>
+            <h1>Travel Nepal</h1>
+            <p>Travel far enough, you meet yourself.</p>
+        </section>
+        <section class="features">
+            <h1> Featured Destinations</h1>
+            <div class="container">
+                <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <div class="gallery-box">
+                            <img src="{% static 'images/image.jpg'%}">
+                        </div>
+                            <div class="price">
+                                <p>5000</p>
+                                
+                            </div>
+                            <div class="rating">
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star-half-o" ></i>
+                                <i class="fa fa-star-half-o" ></i>
+
+
+                            </div>
+                        </div>
+                        <div class="feature-details">
+                            <h4>Pokhara</h4>
+                            <p>Pokhara is one of the most popular tourist destinations in Nepal.
+                                 Many tourists visit Pokhara Valley to see the Himalayan range and lakes. 
+                                 </p>
+                        <div>
+                            <span><i class="fa fa-map-marker" ></i>Pokhara</span>
+                            <span><i class="fa fa-sun-o" ></i>4 Days</span>
+                            <span><i class="fa fa-moon-o" ></i>3 Nights</span>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <div class="gallery-box">
+                            <img src="{% static 'images/poon.jpg'%}">
+                        </div>
+                            <div class="price">
+                                <p>4500</p>
+                                
+                            </div>
+                            <div class="rating">
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star-half-o" ></i>
+                                <i class="fa fa-star-half-o" ></i>
+                                <i class="fa fa-star-half-o" ></i>
+
+
+                            </div>
+                        </div>
+                        <div class="feature-details">
+                            <h4>Poon Hill</h4>
+                            <p>Poon Hill  is a hill station overlooking the Annapurna Massif range and Dhaulagiri mountain range,
+                                 located on border of Myagdi District and Kaski District in Gandaki Pradesh of Nepal.
+                                  </p>
+                        <div>
+                            <span><i class="fa fa-map-marker" ></i>Poon Hill</span>
+                            <span><i class="fa fa-sun-o" ></i>4 Days</span>
+                            <span><i class="fa fa-moon-o" ></i>3 Nights</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <div class="gallery-box">
+                            <img src="{% static 'images/muk.jpg'%}">
+                        </div>
+                            <div class="price">
+                                <p>9500</p>
+                                
+                            </div>
+                            <div class="rating">
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star-half-o" ></i>
+
+
+                            </div>
+                        </div>
+                        <div class="feature-details">
+                            <h4>Muktinath</h4>
+                            <p>Muktinath is a Vishnu temple, sacred to both Hindus and Buddhists.
+                                It is located in Muktinath Valley at the foot of the Thorong La mountain pass in Mustang, Nepal.
+                                
+                            </p>
+                        <div>
+                            <span><i class="fa fa-map-marker" ></i>Muktinath</span>
+                            <span><i class="fa fa-sun-o" ></i>7 Days</span>
+                            <span><i class="fa fa-moon-o" ></i>6 Nights</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="banner">
+            <div class="banner-highlights">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2>Get 20% on top destination </h2>
+                            <p>Book your packages before 30th jan.</p>
+                        </div>
+                        <div class="col-md-4">
+                            {% if user.is_authenticated %}
+                            <button type="button" class="login-btn"><a href="{% url 'travelapp:booking_list'%}">Book Now</a></button>
+                            {% else %}
+                            <button type="button" class="login-btn"><a href="{% url 'travelapp:user_create'%}"> Sign up</a></button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="users-feedback">
+            <h1>Users Review</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="user-review">
+                            <p>If you want to witness the only freshwater lake in Nepal, 
+                                you have come to the right place, Rupa Tal. 
+                                It is one of the glorious serene lakes which will make you feel truly blessed.</p>
+                                <h5>Sujan Poudel</h5>
+                            </div>
+                            <img src="{% static 'images/user1.jpg'%}" >
+                    </div>
+                    <div class="col-md-4">
+                        <div class="user-review">
+                            <p>Our first time took a long tour experience. But Thrillophilia makes everything easy by arranging a good supportive operator and staff. 
+                                Take this chance I can assure that you won't regret it for sure </p>
+                                <h5>Ankit Lamsal</h5>
+                            </div>
+                            <img src="{% static 'images/user2.jpg'%}" >
+                    </div>
+                    <div class="col-md-4">
+                        <div class="user-review">
+                            <p>Trust me guys you will fall in love with everything once you take the trip. The mountains, 
+                                the snow covered tops that gives you a feeling like you are watching these heights from your windows.</p>
+                                <h5>Nabin Jung Kunwar</h5>
+                            </div>
+                            <img src="{% static 'images/user3.jpg'%}" >
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+   
+
+
+    </body>
+</html>

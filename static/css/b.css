@@ -1,0 +1,221 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    background-image: url(../images/b.jpg);
+    background-color: rgb(0, 87, 128);
+    height: 100%;
+}
+.title {
+    font-weight: bolder;
+    font-size: 30px;
+}
+.signupOne{
+    margin: 30px auto;
+    width: 70%;
+    background-color: white;
+    padding: 60px;
+}
+.title, .sub-title, .stepone {
+    text-align: center;
+    color: rgb(29, 202, 188);
+}
+.form{
+    width: 100%;
+    margin-top: 30px;
+}
+.form input{
+    cursor: pointer;
+    padding: 10px 20px 10px 5px;
+    border: none;
+    outline: none;
+    background: none;
+}
+.email, .username, .password, .adress, .dob {
+    display: inline-block;
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,2);
+    padding: 15px;
+    height: 20px;
+    width: auto;
+    margin: 10px 0;
+}
+.form svg {
+    height: 20px;
+    margin-bottom: -5px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.payment {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color: rgb(29, 202, 188);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.pay:hover{
+    color: blueviolet;
+}
+.login {
+    padding-top: 25px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.listView{
+    margin: 30px auto;
+    width: 1100px;
+    background-color: white;
+    padding: 60px;
+}
+.imageView{
+    width:50px;
+}
+
+/* This is the Package Files  */
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  .imag {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .container:hover .overlay {
+    bottom: 0;
+    height: 100%;
+  }
+  
+  .texte {
+    /* margin-top: 20%; */
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+ #booking_detail_create{
+     text-decoration: none;
+
+}
+
+/* .row div:nth-child(2) *{
+    display: block;
+}
+.row div *{
+    display: block;
+}
+.row div{
+    display: block;
+} */
+.row{
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* flex-direction: column; */
+}
+.row>div{
+    /* flex-basis: 80%; */
+    /* width: 60%; */
+    margin-left: 20%;
+}
+.row input{
+    width: 90%;
+    border: 2px solid #000;
+}
+.row>div:nth-child(2){
+    /* display: none; */
+    width: 57%;
+}
+.btn.btn-primary{
+    width: 150px;
+    color: #000;
+    border: 2px solid #000;   
+    padding: 5px;
+    margin: none;
+}
+.btn.btn-primary:hover{
+    border: 2px solid #fff;
+    background: #333;
+    color: #fff;
+}
+.user{
+    display: inline-block;
+    
+}
+
+.btn.btn-primary.ml-2.mr-2{
+    background: #fff;
+}
+
+.btn.btn-primary.ml-2.mr-2:hover{
+    /* color: #000; */
+    border: 2px solid #000;
+    background: #000;
+}
+.login_page_login{
+    margin-top: 20px;
+}
+ .row_r{
+    width:50%;
+} 
+.url_create:link,.url_create:visited{
+    background-color:   rgb(29, 202, 188);
+    color: white;
+    border-radius: 5px;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.url_create:active, .url_create:hover{
+    text-decoration: none;
+    color: black;
+}
+.form-control{
+    border: black 2px solid;
+    width: 85%
+}
+#book_create_submit{
+    margin-left: 20%;
+    margin-top: 30px;
+}
+#book_create_submit:hover {
+    text-decoration: none;
+    color: white;
+
+}
+.booking_list_link:hover{
+    text-decoration: none;
+
+}
+.base_url_home:hover{
+    text-decoration: none;
+    color:rgb(29, 202, 188);
+}

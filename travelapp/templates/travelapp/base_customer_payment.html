@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Nepal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/b.css'%}">
+</head>
+<body>
+<!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4"> 
+        <a class="base_url_home" href="{% url 'travelapp:index'%}">Travel Nepal   
+            <span class="sr-only">(current)</span>  
+        </a>   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
+            <span class="navbar-toggler-icon"></span>  
+        </button>  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">  
+            <ul class="navbar-nav mr-auto">  
+                {% if user.is_authenticated and user.is_superuser %}    
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:booking_list'%}">Package Management   
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>
+                {% elif user.is_authenticated %}    
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:booking_list'%}">Booking   
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>
+                {% endif %} 
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:package_list'%}">Packages  
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>  
+            </ul>  
+            {% if user.is_authenticated and user.is_superuser %}  
+            <!-- Admininstration -->
+            <ul class= "navbar-nav mr-auto">
+                <li class="nav-item active">  
+                    <a class="nav-link" href="http://127.0.0.1:8000/admin/travelapp/package/">Create Packages   
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>
+
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:user_logout'%}">Logout   
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>  
+            </ul>
+            {% elif user.is_authenticated %}  
+                <!-- Customer  -->
+                <ul class= "navbar-nav mr-auto">
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:user_update'%}">Update Profile   
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:user_detail'%}">Your Details  
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:user_delete'%}">Delete Your Profile  
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>
+                <li class="nav-item active">  
+                    <a class="nav-link" href="{% url 'travelapp:user_logout'%}">Logout   
+                        <span class="sr-only">(current)</span>  
+                    </a>  
+                </li>
+            </ul>
+            {% else %}
+            <!-- Login And Sign Up For All -->
+                <a class="btn btn-primary ml-2 mr-2" href="{% url 'travelapp:user_login'%}">Login</a>  
+                <a class="btn btn-primary ml-2 mr-2" href=" {% url 'travelapp:user_create'%} ">SignUp</a>  
+
+<!-- Put endif template tagging here -->
+            {% endif %}  
+        </div>  
+    </nav> 
+<!-- Up to Here  -->
+    {% block body_block%}
+    {% endblock%}
+</body>
+</html>

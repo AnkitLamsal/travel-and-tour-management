@@ -1,0 +1,18 @@
+{% extends "travelapp/base_customer_payment.html"%}
+{% block body_block %}
+{% load crispy_forms_tags %}
+    <div class="signupOne">
+        <div class="title">Travel Nepal</div>
+        <div class="sub-title">Your Favourite Travel Hub.</div><br>
+        <div class="stepone"> Fill The Form </div>
+        <div class="form">
+            <form method="POST" >
+                <div class="row">                  
+                    <div>
+                        {%csrf_token%}
+                        {{form|crispy}}
+                    </div>
+                </div>
+            <input type="submit" class="btn btn-primary" id="book_create_submit" value="Update Profile">    
+
+{% endblock%}

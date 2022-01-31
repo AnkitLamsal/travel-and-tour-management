@@ -1,0 +1,35 @@
+{% extends "travelapp/base_customer_payment.html"%}
+{% block body_block %}
+<div class="listView">
+    {% if user.is_authenticated and user.is_superuser %}
+    <h3> Go to This Section !</h3>
+    <p><a href="{% url 'travelapp:list-user' %}" class="url_create">Update </a></p>
+    {% elif user.is_authenticated%}
+    {% for x in customer%}
+    <h3> Your Details</h3><br>
+        <h5>customer name: {{x}}</h5><br>
+        <h5>customer dob: {{ x.customer_dob}}</h5><br>
+        <h5>address : {{x.customer_address}}</h5><br>
+        <h5>email: {{x.customer_name.email}}</h5><br>
+        <p><a href="{% url 'travelapp:user_update' %}" class="url_create">Update </a></p>
+        <p><a href="{% url 'travelapp:user_delete' %}" class="url_create">Delete</a></p>
+    {% endfor %}
+    {% else %}
+    <h3>Please Sign Up/ Login To acess !</h3>
+    <a href="{% url 'travelapp:user_create'%}" class="url_create" >Create Account</a>
+    <a href="{% url 'travelapp:user_login'%}" class="url_create" >Login </a>
+    {% endif%}
+</div>
+{% endblock %}  
+
+
+<!-- <div class="listView">
+    <h3>
+        Name:   {{ object.customer_name}}<br>
+        Email:  {{ object.customer_name.email }}<br>
+        Address:{{ object.customer_address }}<br>
+        Date of Birth :{{object.customer_dob}}<br><br><br>
+        
+    </h3>
+</div>
+ -->

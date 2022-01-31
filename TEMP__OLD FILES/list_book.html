@@ -1,0 +1,8 @@
+{% extends "travelapp/base_customer_payment.html"%}
+{% block body_block %}
+<div class="listView">
+{% for i  in value %}
+    <h2>{{ i.pacakage_name }}</h2>
+{% endfor %}
+</div>
+{% endblock %}

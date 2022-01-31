@@ -1,0 +1,26 @@
+{% extends "travelapp/base_customer_payment.html"%}
+{% block body_block %}
+
+    <div class="signupOne">
+        <div class="title">Travel Nepal</div>
+        <div class="sub-title">Your Favourite Travel Hub.</div><br>
+        <div class="stepone"> Please Login </div>
+        <div class="form">
+            <form method="POST" action="{% url 'travelapp:user_login' %}">
+            {% csrf_token %}
+            <div class="row">
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter Username">
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Enter Password">
+            </div>
+            <div class="login_page_login">
+            <input type="submit" class="btn btn-primary" value="Login">    
+            </div>  
+            <div class="login">
+                <div class="user">New To Website ?</div>
+                <a href="{% url 'travelapp:user_create'%}" class="base_url_home ">  Sign In </a>
+            </div> 
+        </form>
+    </div>
+{% endblock %}

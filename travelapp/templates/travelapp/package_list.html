@@ -1,0 +1,24 @@
+{% extends "travelapp/base_customer_payment.html"%}
+{% block body_block %}
+{% for post in object_list %}
+<div class="container">
+    <img src="{{ post.package_image.url}}" alt="Package" class="imag">
+    <div class="overlay">
+      <div class="texte">
+          <h2>{{post.package_name}}</h2>
+          <p>{{post.package_description}}</p>
+          <h4> Total Days: {{post.package_number_of_days}}</h4>
+          <h5>Package Destination: <br>{{post.package_destination}}</h5>
+          <h5>Per Person Amount: $ {{post.per_person_amt}}</h5>
+          {% if user.is_authenticated %}
+          <a href="{% url 'travelapp:booking_create__'%}"></a>
+          <a href="{% url 'travelapp:booking_list'%}" id="book_create_submit">Book Now</a>
+          {% else %}
+          <h5>Please Sign Up/ Login for Booking!</h5>
+          <a href="{% url 'travelapp:user_create'%}" id="book_create_submit">Create Account</a>
+          {% endif%}
+        </div>
+    </div>
+  </div>
+{% endfor%}
+{% endblock %}  

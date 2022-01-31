@@ -1,0 +1,17 @@
+{% extends "travelapp/base_customer_payment.html"%}
+{% block body_block %}
+<div class="listView">
+    <h4> Booking's Detail</h4>
+    <h5> Booking Type: {{booking_detail.booking_type}}</h5>
+    <h5> Booking Start Date: {{booking_detail.booking_start_date}}</h5>
+    <h5> Booking Hotel : {{booking_detail.booking_hotel}}</h5>
+    <h5> Booking Transport: {{booking_detail.booking_transport}}</h5>
+    <h5> Number Of People: {{booking_detail.number_people}}</h5>
+    <h5> Booked By : {{booking_detail.booked_by}}</h5>
+    <h5> Booked Package Name: {{booking_detail.package_name}} </h5>
+    <h5>{{id.customer_dob}}</h5>
+    <p><a href="{% url 'travelapp:booking_update' pk=booking_detail.pk%}">Update </a></p>
+    <p><a href="{% url 'travelapp:booking_delete' pk=booking_detail.pk%}">Delete</a></p>
+</div>
+
+{% endblock %}  
